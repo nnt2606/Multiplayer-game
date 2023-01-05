@@ -5,7 +5,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import database.Database;
 import exceptions.uservalidation.RegisterPasswordMismatchException;
-import exceptions.roommanagement.UsernameAlreadyExistException;
+import exceptions.uservalidation.UsernameAlreadyExistException;
 import org.bson.Document;
 
 public class UserRegistration {
