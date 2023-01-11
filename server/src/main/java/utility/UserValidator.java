@@ -5,8 +5,8 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import database.Database;
-import exceptions.roommanagement.WrongLoginPasswordException;
-import exceptions.roommanagement.WrongLoginUsernameException;
+import exceptions.uservalidation.WrongLoginPasswordException;
+import exceptions.uservalidation.WrongLoginUsernameException;
 import org.bson.Document;
 
 import java.util.HashMap;
