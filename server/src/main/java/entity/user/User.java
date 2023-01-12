@@ -1,6 +1,7 @@
 package entity.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import entity.game.Game;
 import exceptions.uservalidation.WrongLoginPasswordException;
 import exceptions.uservalidation.WrongLoginUsernameException;
 import lombok.Getter;
@@ -19,6 +20,8 @@ public class User {
     private UUID userID;
     @JsonIgnore
     private Session session;
+    @JsonIgnore
+    private Game game;
     private String userName;
     private String avatar = "Bunny";
 
@@ -39,6 +42,17 @@ public class User {
             this.session = session;
             this.userID = UUID.randomUUID();
             this.userName = userName;
+        }
+    }
+
+    public void joinGame(Game game) {
+        this.game = game;
+    }
+
+    public void leaveGame() {
+        if (this.game != null) {
+            this.game.removeUser(this);
+            this.game = null;
         }
     }
 
@@ -70,5 +84,9 @@ public class User {
             return false;
         }
         return false;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 }
