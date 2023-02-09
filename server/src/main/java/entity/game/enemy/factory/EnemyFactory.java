@@ -15,7 +15,7 @@ public class EnemyFactory {
 
     static {
         try {
-            File myObj = new File("D:\\JavaWorkspace\\NetworkProgramming\\src\\main\\java\\EnemyConfig.txt");
+            File myObj = new File("src/main/java/EnemyConfig.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
